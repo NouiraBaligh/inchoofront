@@ -21,6 +21,7 @@ const Product = () => {
   const [reviews, setReviews] = useState([]);
   const [showAll, setShowAll] = useState(false); // State to toggle "Show All" reviews
   const [averageRating, setAverageRating] = useState(0); // To hold the average rating
+  const [errors, setErrors] = React.useState({});
 
   const handleRatingChange = (star) => {
     setRating(star); // Set rating when a star is clicked
@@ -36,17 +37,24 @@ const Product = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Validate form data
-    if (!name || !email || !review || !rating) {
-      Swal.fire({
-        title: "Error",
-        text: "Tous les champs sont obligatoires.",
-        icon: "warning",
-        timer: 2000,
-        showConfirmButton: false,
-      });
-      return; // Stop further execution if fields are missing
+    // Initialize errors object
+    const errors = {};
+
+    // Validate fields
+    if (!name.trim()) errors.name = "Le nom est obligatoire.";
+    if (!email.trim()) {
+      errors.email = "L'e-mail est obligatoire.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errors.email = "Le format de l'e-mail est invalide.";
     }
+    if (!review.trim()) errors.review = "L'avis est obligatoire.";
+    if (!rating) errors.rating = "La note est obligatoire.";
+
+    // Update state with errors
+    setErrors(errors);
+
+    // Stop form submission if there are errors
+    if (Object.keys(errors).length > 0) return;
 
     const reviewData = {
       productId,
@@ -73,40 +81,30 @@ const Product = () => {
 
         // Show success alert
         Swal.fire({
-          title: "Success!",
-          text: "Votre avis a été soumis avec succès.",
+          title: "Succès!",
+          text: "Votre avis a été créé avec succès.",
           icon: "success",
-          timer: 2000,
-          showConfirmButton: false,
-        }).then(() => {
-          // Optionally reset the form here or handle further actions
-          setName("");
-          setEmail("");
-          setReview("");
-          setRating("");
-          fetchProductReviews();
+          confirmButtonText: "OK",
         });
+
+        // Reset form fields and errors
+        setName("");
+        setEmail("");
+        setReview("");
+        setRating(0);
+        setErrors({});
+        fetchProductReviews();
       } else {
         const error = await response.json();
-        console.error("Error submitting review:", error.message);
-
-        // Show error alert
-        Swal.fire({
-          title: "Error!",
-          text: `Échec de la soumission de l'avis : ${error.message}`,
-          icon: "error",
-          confirmButtonText: "Try Again",
+        setErrors({
+          submit: `Échec de la soumission de l'avis : ${error.message}`,
         });
       }
     } catch (error) {
       console.error("Unexpected error:", error);
-
-      // Show unexpected error alert
-      Swal.fire({
-        title: "Unexpected Error",
-        text: "An unexpected error occurred. Please try again later.",
-        icon: "error",
-        confirmButtonText: "OK",
+      setErrors({
+        submit:
+          "Une erreur inattendue s'est produite. Veuillez réessayer plus tard.",
       });
     }
   };
@@ -162,9 +160,8 @@ const Product = () => {
   };
 
   useEffect(() => {
-    // Update average rating when reviews change
     setAverageRating(calculateAverageRating());
-  }, [reviews]); // Recalculate when reviews change
+  }, [reviews]);
 
   const handleAddToCart = () => {
     if (!product) return;
@@ -220,7 +217,13 @@ const Product = () => {
   }
 
   if (!product) {
-    return <div>Loading...</div>;
+    return (
+      <div class="flex flex-row gap-2">
+        <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+        <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.3s]"></div>
+        <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+      </div>
+    );
   }
 
   return (
@@ -470,36 +473,38 @@ const Product = () => {
                           </h2>
 
                           {/* Rating */}
-
-                          <div className="flex items-center">
+                          <div>
                             <label className="text-gray-600">
                               Votre note *
                             </label>
-                            {[1, 2, 3, 4, 5].map(
-                              (
-                                star // Map from 1 to 5 for left to right
-                              ) => (
+                            <div className="flex items-center">
+                              {[1, 2, 3, 4, 5].map((star) => (
                                 <svg
                                   key={star}
-                                  className={`w-4 h-4 ms-1 cursor-pointer 
-            ${
-              hoveredRating >= star || rating >= star
-                ? "text-yellow-400"
-                : "text-gray-300 dark:text-gray-500"
-            }`}
+                                  className={`w-4 h-4 ms-1 cursor-pointer ${
+                                    hoveredRating >= star || rating >= star
+                                      ? "text-yellow-400"
+                                      : "text-gray-300 dark:text-gray-500"
+                                  }`}
                                   aria-hidden="true"
                                   xmlns="http://www.w3.org/2000/svg"
                                   fill="currentColor"
                                   viewBox="0 0 22 20"
-                                  onMouseEnter={() => handleMouseEnter(star)} // On hover, change the hovered rating
-                                  onMouseLeave={handleMouseLeave} // On mouse leave, reset the hovered rating
-                                  onClick={() => handleRatingChange(star)} // Set the rating when clicked
+                                  onMouseEnter={() => handleMouseEnter(star)}
+                                  onMouseLeave={handleMouseLeave}
+                                  onClick={() => setRating(star)}
                                 >
                                   <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                                 </svg>
-                              )
+                              ))}
+                            </div>
+                            {errors.rating && (
+                              <p className="text-red-500 text-sm">
+                                {errors.rating}
+                              </p>
                             )}
                           </div>
+
                           {/* Review */}
                           <div>
                             <label className="text-gray-600">
@@ -510,8 +515,14 @@ const Product = () => {
                               value={review}
                               onChange={(e) => setReview(e.target.value)}
                             ></textarea>
+                            {errors.review && (
+                              <p className="text-red-500 text-sm">
+                                {errors.review}
+                              </p>
+                            )}
                           </div>
 
+                          {/* Name */}
                           <div>
                             <label className="text-gray-600">Nom *</label>
                             <input
@@ -520,23 +531,32 @@ const Product = () => {
                               value={name}
                               onChange={(e) => setName(e.target.value)}
                             />
+                            {errors.name && (
+                              <p className="text-red-500 text-sm">
+                                {errors.name}
+                              </p>
+                            )}
                           </div>
 
                           {/* Email */}
                           <div>
                             <label className="text-gray-600">E-mail *</label>
                             <input
-                              type="email"
+                              type="string"
                               className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
                               value={email}
                               onChange={(e) => setEmail(e.target.value)}
                             />
+                            {errors.email && (
+                              <p className="text-red-500 text-sm">
+                                {errors.email}
+                              </p>
+                            )}
                           </div>
 
-                          {/* Error/Success Messages */}
-                          {error && <p className="text-red-500">{error}</p>}
-                          {success && (
-                            <p className="text-green-500">{success}</p>
+                          {/* General Error Message */}
+                          {errors.submit && (
+                            <p className="text-red-500">{errors.submit}</p>
                           )}
 
                           {/* Submit Button */}

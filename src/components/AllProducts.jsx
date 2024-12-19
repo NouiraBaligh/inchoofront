@@ -6,16 +6,26 @@ const AllProducts = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false); // For small device filters
+  const [loading, setLoading] = useState(true);
 
   // Fetch products from API
   const fetchProducts = async () => {
     try {
+      setLoading(true); // Start loading
       const response = await fetch("http://localhost:8000/api/v1/products");
+      if (!response.ok) {
+        throw new Error("Failed to fetch products.");
+      }
       const products = await response.json();
+
+      // Log the products to verify the averageRating field is included
+
       setData(products);
       setFilteredData(products);
     } catch (error) {
       console.error("Error fetching products:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -37,6 +47,37 @@ const AllProducts = () => {
     } else {
       setFilteredData(data);
     }
+  };
+
+  // Sorting logic
+  const handleSortChange = (sortOption) => {
+    let sortedData = [...filteredData];
+
+    switch (sortOption) {
+      case "price-asc":
+        sortedData.sort((a, b) => a.price - b.price);
+        break;
+
+      case "price-desc":
+        sortedData.sort((a, b) => b.price - a.price);
+        break;
+
+      case "rating":
+        sortedData.sort((a, b) => b.averageRating - a.averageRating);
+        console.log("Sorted by Rating:", sortedData); // Log the sorted data
+        break;
+
+      case "recent":
+        sortedData.sort(
+          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+        );
+        break;
+
+      default:
+        sortedData = [...filteredData];
+    }
+
+    setFilteredData(sortedData);
   };
 
   // Hide the mobile filter if the screen size changes
@@ -146,7 +187,7 @@ const AllProducts = () => {
           )}
 
           {/* Main Content */}
-          <main className="mx-auto  px-4 sm:px-6 lg:px-8">
+          <main className="mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900"></h1>
               {/* Mobile Filter Button */}
@@ -169,6 +210,22 @@ const AllProducts = () => {
                 </svg>
                 Filtres
               </button>
+            </div>
+
+            {/* Sort Dropdown */}
+            <div className="flex justify-end items-center m-4">
+              <select
+                id="sort"
+                onChange={(e) => handleSortChange(e.target.value)}
+                class="block py-2.5 px-0 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+              >
+                <option value="rating">Tri par notes moyennes</option>
+                <option value="recent">
+                  Tri du plus récent au plus ancien
+                </option>
+                <option value="price-asc">Tri par tarif croissant</option>
+                <option value="price-desc">Tri par tarif décroissant</option>
+              </select>
             </div>
 
             <section aria-labelledby="products-heading" className="pb-24 pt-6">
@@ -219,11 +276,20 @@ const AllProducts = () => {
 
                 {/* Products Section */}
                 <div className="lg:col-span-3">
-                  {filteredData.length === 0 ? (
+                  {loading ? (
+                    <div className="flex justify-center items-center py-10">
+                      <div className="flex flex-row gap-2">
+                        <div className="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+                        <div className="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.3s]"></div>
+                        <div className="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+                      </div>
+                    </div>
+                  ) : filteredData.length === 0 ? (
                     // Display a message if no products match the filters
                     <div className="flex items-center justify-center h-full py-10">
                       <p className="text-lg text-gray-500">
-                        Aucun produit trouvé pour les filtres sélectionnés.{" "}
+                        Aucun produit disponible pour le moment pour les filtres
+                        sélectionnés. Revenez dans les prochains jours.
                       </p>
                     </div>
                   ) : (

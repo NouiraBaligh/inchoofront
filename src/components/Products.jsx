@@ -12,16 +12,20 @@ const Products = () => {
   const [data, setData] = useState([]); // State to store all products
   const [filteredData, setFilteredData] = useState([]); // State to store filtered products
   const [filter, setFilter] = useState("nouveaux"); // Default filter to "nouveaux" (New Arrivals)
+  const [loading, setLoading] = useState(true);
 
   // Fetch products from API
   const fetchProducts = async () => {
     try {
+      setLoading(true); // Start loading
       const response = await fetch("http://localhost:8000/api/v1/products");
       const products = await response.json();
       setData(products); // Store all products
       handleFilter("nouveaux", products); // Set default filter to "nouveaux" after fetching
     } catch (error) {
       console.error("Error fetching products:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -66,9 +70,19 @@ const Products = () => {
         </ul>
       </div>
       <div className="flex flex-wrap mx-[40px]">
-        {filteredData.map((product) => (
-          <Product key={product._id} product={product} />
-        ))}
+        {loading ? (
+          <div className="flex justify-center items-center py-10">
+            <div className="flex flex-row gap-2">
+              <div className="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+              <div className="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.3s]"></div>
+              <div className="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+            </div>
+          </div>
+        ) : (
+          filteredData.map((product) => (
+            <Product key={product._id} product={product} />
+          ))
+        )}
       </div>
     </div>
   );

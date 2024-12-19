@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaSprayCan, FaFeatherAlt, FaSnowflake } from "react-icons/fa";
 function BannerPromoOne() {
   return (
@@ -10,7 +11,6 @@ function BannerPromoOne() {
         <div class="gr mx-auto max-w-3xl items-stretch space-y-4 text-left sm:flex sm:space-y-0 sm:space-x-8 sm:text-center">
           <a
             class="flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:no-underline hover:shadow-lg dark:text-white dark:hover:bg-white dark:hover:bg-opacity-10 sm:flex-col sm:hover:shadow-2xl"
-            href="#"
             target="_blank"
           >
             <FaFeatherAlt className="mr-4 w-12 sm:mr-0 sm:h-32 sm:w-32 text-[#ad9b60]" />
@@ -23,7 +23,6 @@ function BannerPromoOne() {
           </a>
           <a
             class="flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:no-underline hover:shadow-lg dark:text-white dark:hover:bg-white dark:hover:bg-opacity-10 sm:flex-col sm:hover:shadow-2xl"
-            href="#"
             target="_blank"
           >
             <FaSnowflake className="mr-4 w-12 sm:mr-0 sm:h-32 sm:w-32 text-[#ad9b60]" />
@@ -36,7 +35,6 @@ function BannerPromoOne() {
           </a>
           <a
             class="flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:no-underline hover:shadow-lg dark:text-white dark:hover:bg-white dark:hover:bg-opacity-10 sm:flex-col sm:hover:shadow-2xl"
-            href="#"
             target="_blank"
           >
             <FaSprayCan className="mr-4 w-12 sm:mr-0 sm:h-32 sm:w-32 text-[#ad9b60]" />
@@ -51,7 +49,7 @@ function BannerPromoOne() {
       </div>
       <div class="mx-auto grid max-w-screen-xl rounded-lg  p-4 dark:bg-gray-800 md:p-8 lg:grid-cols-12 lg:gap-8 lg:p-16 xl:gap-16">
         <div class="lg:col-span-5 lg:mt-0">
-          <a href="#">
+          <a>
             <img
               class="mb-4 h-56 w-56 dark:hidden sm:h-96 sm:w-96 md:h-full md:w-full"
               src="/logoInchoo.png"
@@ -64,12 +62,12 @@ function BannerPromoOne() {
             INCHOO est une marque 100% tunisienne dédiée à l'excellence des
             produits d'hygiène et de bien-être.
           </p>
-          <a
-            href="#"
+          <Link
+            to="/aboutUs"
             class="inline-block rounded-full bg-[#ad9b60] px-8 py-4 text-center font-bold text-white transition "
           >
             Voir Plus
-          </a>
+          </Link>
         </div>
       </div>
       <section class="text-[#ad9b60] body-font">
@@ -79,28 +77,28 @@ function BannerPromoOne() {
         <section class="overflow-hidden">
           <div class="max-w-screen-xl 2xl:max-w-screen-3xl mx-auto py-12 lg:py-24 flex flex-col justify-center">
             <div class="flex flex-wrap justify-center gap-4">
-              <a href="#_">
+              <a>
                 <img
                   src="/imgpromo3.jpg"
                   class="w-72 h-72 rounded-xl object-cover transform hover:scale-110 transition duration-300 ease-in-out"
                   alt="Image 1"
                 />
               </a>
-              <a href="#_">
+              <a>
                 <img
                   src="/imgco2.PNG"
                   class="w-72 h-72 rounded-xl object-cover transform hover:scale-110 transition duration-300 ease-in-out"
                   alt="Image 2"
                 />
               </a>
-              <a href="#_">
+              <a>
                 <img
                   src="/imgpromo1.jpg"
                   class="w-72 h-72 rounded-xl object-cover transform hover:scale-110 transition duration-300 ease-in-out"
                   alt="Image 3"
                 />
               </a>
-              <a href="#_">
+              <a>
                 <img
                   src="/imgpromo2.jpg"
                   class="w-72 h-72 rounded-xl object-cover transform hover:scale-110 transition duration-300 ease-in-out"

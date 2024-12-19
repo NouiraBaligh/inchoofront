@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function BannerPromoTwo() {
   return (
@@ -17,12 +18,12 @@ function BannerPromoTwo() {
                   et de détente privilégié pour vous ressourcer.
                 </p>
                 <div class="mt-6">
-                  <a
+                  <Link
                     class="inline-flex rounded-lg bg-[#ad9b60] px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-[#ad9b60] hover:bg-[#ad9b60] hover:ring-[#ad9b60]"
-                    href="/"
+                    to="/products"
                   >
                     Voir plus
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -53,12 +54,12 @@ function BannerPromoTwo() {
                   votre beauté avec les soins Inchoo.
                 </p>
                 <div class="mt-6">
-                  <a
+                  <Link
                     class="inline-flex rounded-lg bg-[#ad9b60] px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-[#ad9b60] hover:bg-[#ad9b60] hover:ring-[#ad9b60]"
-                    href="/"
+                    to="/products"
                   >
                     Voir plus
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -91,12 +92,12 @@ function BannerPromoTwo() {
                   magnifique
                 </p>
                 <div class="mt-6">
-                  <a
+                  <Link
                     class="inline-flex rounded-lg bg-[#ad9b60] px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-[#ad9b60] hover:bg-[#ad9b60] hover:ring-[#ad9b60]"
-                    href="/"
+                    to="/products"
                   >
                     Voir plus
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -15,9 +15,9 @@ function Navbar() {
       "/aboutUs": "À propos de nous",
       "/contact": "Contact",
     };
-    setActiveLink(pathToLinkMap[location.pathname] || "Accueil");
+    const currentLink = pathToLinkMap[location.pathname];
+    setActiveLink(currentLink || null); // If not found, set activeLink to null
   }, [location]);
-
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   const handleToggle = () => {
@@ -26,7 +26,7 @@ function Navbar() {
 
   return (
     <div>
-      <header className="flex shadow-md py-4 px-4 sm:px-10 bg-gray-900 font-sans min-h-[75px] tracking-wide relative z-50">
+      <header className="flex shadow-md py-4 px-4 sm:px-10 bg-[rgba(18,19,20,1)] font-sans min-h-[75px] tracking-wide relative z-50">
         <div className="flex flex-wrap items-center gap-4 w-full">
           {/* Logo */}
           <Link to="/">
