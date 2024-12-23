@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import StarRatings from "react-star-ratings"; // If needed
+import { URLImg } from "../config/config";
 
 const Product = ({ product }) => {
   return (
@@ -10,9 +11,7 @@ const Product = ({ product }) => {
       <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl border border-[#feedc1]">
         <Link to={`/product/${product._id}`}>
           <img
-            src={`http://localhost:3000/products_images/${
-              product.img.split("/")[2]
-            }`}
+            src={`${URLImg}/products_images/${product.img.split("/")[2]}`}
             alt="Product"
             className="h-80 w-72 object-cover rounded-t-xl"
           />

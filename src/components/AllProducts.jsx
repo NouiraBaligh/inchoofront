@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Product from "./Product";
+import { baseURL } from "../config/config";
 
 const AllProducts = () => {
   const [data, setData] = useState([]);
@@ -12,7 +13,7 @@ const AllProducts = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true); // Start loading
-      const response = await fetch("http://localhost:8000/api/v1/products");
+      const response = await fetch(`${baseURL}/products`);
       if (!response.ok) {
         throw new Error("Failed to fetch products.");
       }

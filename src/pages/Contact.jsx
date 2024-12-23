@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import { baseURL } from "../config/config";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -16,16 +17,13 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch(
-        "http://localhost:8000/api/v1/users/createMsg",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch(`${baseURL}/products/users/createMsg`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       const result = await response.json();
 

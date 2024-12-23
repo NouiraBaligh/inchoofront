@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import CartContext from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { baseURL } from "../config/config";
 
 function Paiement() {
   const { cart, promoCode, discountPercentage, clearCart } =
@@ -98,7 +99,7 @@ function Paiement() {
     };
 
     try {
-      const response = await fetch("http://localhost:8000/api/v1/orders", {
+      const response = await fetch(`${baseURL}/orders`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

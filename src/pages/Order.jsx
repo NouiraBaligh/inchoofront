@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import CartContext from "../../context/CartContext";
 import { useNavigate } from "react-router-dom"; // If using React Router v6
+import { baseURL, URLImg } from "../config/config";
 
 const Order = () => {
   const {
@@ -22,18 +23,15 @@ const Order = () => {
 
   const applyPromoCode = async () => {
     try {
-      const response = await fetch(
-        "http://localhost:8000/api/v1/promocode/apply",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            title: promoCode,
-          }),
-        }
-      );
+      const response = await fetch(`${baseURL}/promocode/apply`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title: promoCode,
+        }),
+      });
 
       const data = await response.json();
 
@@ -163,7 +161,7 @@ const Order = () => {
                   >
                     <div className="w-48 h-48 sm:w-36 sm:h-36 flex-shrink-0">
                       <img
-                        src={`http://localhost:3000/products_images/${
+                        src={`${URLImg}/products_images/${
                           item.image.split("/")[2]
                         }`}
                         alt={item.name}

@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import CartContext from "../../context/CartContext";
 import Swal from "sweetalert2";
+import { baseURL, URLImg } from "../config/config";
 
 const Product = () => {
   const { productId } = useParams();
@@ -65,16 +66,13 @@ const Product = () => {
     };
 
     try {
-      const response = await fetch(
-        "http://localhost:8000/api/v1/products/rating",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(reviewData),
-        }
-      );
+      const response = await fetch(`${baseURL}/products/rating`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(reviewData),
+      });
 
       if (response.ok) {
         const savedReview = await response.json();
@@ -111,9 +109,7 @@ const Product = () => {
 
   const fetchProductDetails = async () => {
     try {
-      const response = await fetch(
-        `http://localhost:8000/api/v1/products/${productId}`
-      );
+      const response = await fetch(`${baseURL}/products//${productId}`);
       if (!response.ok) {
         throw new Error("Failed to fetch product details.");
       }
@@ -131,9 +127,7 @@ const Product = () => {
   // Fetch reviews of the product
   const fetchProductReviews = async () => {
     try {
-      const response = await fetch(
-        `http://localhost:8000/api/v1/products/rates/${productId}`
-      );
+      const response = await fetch(`${baseURL}/products/rates/${productId}`);
       if (!response.ok) {
         throw new Error("Failed to fetch product reviews.");
       }
@@ -233,9 +227,7 @@ const Product = () => {
           <div class="w-full lg:sticky top-0 text-center">
             <div class="lg:h-[560px]">
               <img
-                src={`http://localhost:3000/products_images/${
-                  product.img.split("/")[2]
-                }`}
+                src={`${URLImg}/products_images/${product.img.split("/")[2]}`}
                 alt="Product"
                 class="lg:w-11/12 w-full h-full rounded-md object-cover object-top"
               />

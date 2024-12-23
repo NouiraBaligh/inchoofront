@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Product from "./Product";
+import { baseURL } from "../config/config";
 
 // Helper function to manage the button styles based on selected filter
 const getButtonClass = (currentFilter, buttonFilter) => {
@@ -18,7 +19,7 @@ const Products = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true); // Start loading
-      const response = await fetch("http://localhost:8000/api/v1/products");
+      const response = await fetch(`${baseURL}/products`);
       const products = await response.json();
       setData(products); // Store all products
       handleFilter("nouveaux", products); // Set default filter to "nouveaux" after fetching
