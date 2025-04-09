@@ -57,12 +57,20 @@ function Paiement() {
       errors.phone = "Numéro de téléphone est requis.";
     } else if (!/^\d+$/.test(formData.phone)) {
       errors.phone = "Numéro de téléphone invalide.";
-    }
-    // Validate second phone if it exists
-    if (formData.secondPhone.trim() && !/^\d+$/.test(formData.secondPhone)) {
-      errors.secondPhone = "Numéro de téléphone secondaire invalide.";
+    } else if (formData.phone.length !== 8) {
+      errors.phone =
+        "Le numéro de téléphone doit contenir exactement 8 chiffres.";
     }
 
+    // Validate second phone if it exists
+    if (formData.secondPhone.trim()) {
+      if (!/^\d+$/.test(formData.secondPhone)) {
+        errors.secondPhone = "Numéro de téléphone secondaire invalide.";
+      } else if (formData.secondPhone.length !== 8) {
+        errors.secondPhone =
+          "Le numéro secondaire doit contenir exactement 8 chiffres.";
+      }
+    }
     return errors;
   };
 
