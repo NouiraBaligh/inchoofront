@@ -3,10 +3,10 @@ import React from "react";
 function AboutUs() {
   return (
     <div>
-      <div class="relative w-full h-[550px]" id="home">
-        <div class="absolute inset-0 opacity-70">
+      <div class="relative w-full h-[460px]" id="home">
+        <div class="absolute inset-0 ">
           <img
-            src="/lastone.png"
+            src="/inchoo.jpg"
             alt="Background Image"
             class="object-cover object-center w-full h-full"
           />

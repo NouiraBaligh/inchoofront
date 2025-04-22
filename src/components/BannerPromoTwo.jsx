@@ -10,12 +10,14 @@ function BannerPromoTwo() {
             <div>
               <div class="mt-6">
                 <h2 class="text-3xl font-bold tracking-tight text-black">
-                  Retrouvez une chevelure saine, soyeuse et brillante !
+                  Routine de pureté pour une peau sublime{" "}
                 </h2>
                 <p class="mt-4 text-lg text-black">
-                  Laissez-vous transporter par nos délicates senteurs et
-                  retrouvez une peau douce et satinée. Un moment de relaxation
-                  et de détente privilégié pour vous ressourcer.
+                  Nos produits de soin visage agissent en synergie pour offrir
+                  un nettoyage en profondeur et un démaquillage parfait. Leurs
+                  formules douces purifient la peau, tout en préservant son
+                  équilibre et en lui apportant une sensation d'hydratation, de
+                  propreté et de fraîcheur instantanées.
                 </p>
                 <div class="mt-6">
                   <Link
@@ -29,13 +31,12 @@ function BannerPromoTwo() {
             </div>
           </div>
           <div class="mt-12 sm:mt-16 lg:mt-0">
-            <div class="pl-2 pr-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
+            <div class="relative w-full sm:max-w-[350px] md:max-w-[550px] lg:max-w-none h-[250px] sm:h-[350px] md:h-[420px] lg:h-[485px] flex items-center justify-center mx-auto">
               <img
+                alt="SOINS DE VISAGE"
                 loading="lazy"
-                width="646"
-                height="485"
-                class="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                src="/imgban13.jpg"
+                class="max-h-full max-w-full object-contain rounded-xl shadow-xl ring-1 ring-black ring-opacity-5"
+                src="/soinsdevisage.jpg"
               />
             </div>
           </div>
@@ -47,11 +48,14 @@ function BannerPromoTwo() {
             <div>
               <div class="mt-6">
                 <h2 class="text-3xl font-bold tracking-tight text-black">
-                  Des soins naturels d'exception pour une peau royale !{" "}
+                  Hydratation intense et parfum subtil pour votre peau{" "}
                 </h2>
                 <p class="mt-4 text-lg text-black">
-                  Que vous ayez la peau sèche, mixte ou grasse, faîtes rayonner
-                  votre beauté avec les soins Inchoo.
+                  Nos soins de peau offrent une nutrition intense et un parfum
+                  durable pour une peau lisse et soyeuse. Chaque application
+                  procure une sensation de confort et de douceur, tout en
+                  laissant la peau profondément nourrie et délicatement
+                  parfumée.
                 </p>
                 <div class="mt-6">
                   <Link
@@ -65,15 +69,14 @@ function BannerPromoTwo() {
             </div>
           </div>
           <div class="mt-12 sm:mt-16 lg:mt-0">
-            <div class="pl-2 pr-6 md:-ml-16 lg:relative lg:m-0 lg:h-full lg:px-0">
+            {/* <div class="pl-2 pr-6 md:-ml-16 lg:relative lg:m-0 lg:h-full lg:px-0"> */}
+            <div class="relative w-full sm:max-w-[350px] md:max-w-[550px] lg:max-w-none h-[250px] sm:h-[350px] md:h-[420px] lg:h-[485px] flex items-center justify-center mx-auto">
               <img
-                alt="Inbox user interface"
+                alt="SOINS DE PEAU"
                 loading="lazy"
-                width="647"
-                height="486"
-                class="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 mb-4 sm:mb-6 md:mb-0 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-                src="/imgban12.webp"
-              />
+                class="max-h-full max-w-full object-contain rounded-xl shadow-xl ring-1 ring-black ring-opacity-5"
+                src="/inchhh.jpg"
+              />{" "}
             </div>
           </div>
         </div>
@@ -85,11 +88,14 @@ function BannerPromoTwo() {
             <div>
               <div class="mt-6">
                 <h2 class="text-3xl font-bold tracking-tight text-black">
-                  INCHOO, le "bkhour" dans toute sa richesse
+                  L'Alliance parfaite de luxe et de parfum
                 </h2>
                 <p class="mt-4 text-lg text-black">
-                  Retrouvez une large sélection des bkhour avec une odeur
-                  magnifique
+                  Découvrez l’élégance absolue à travers nos créations
+                  raffinées, alliant la sensualité, le luxe et l'unicité. Nos
+                  parfums cheveux et corps déposent un voile délicat sur la peau
+                  et les cheveux, offrant une sensation de magnificence et de
+                  sophistication qui vous accompagne tout au long de la journée.
                 </p>
                 <div class="mt-6">
                   <Link
@@ -103,13 +109,92 @@ function BannerPromoTwo() {
             </div>
           </div>
           <div class="mt-12 sm:mt-16 lg:mt-0">
-            <div class="pl-2 pr-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
+            <div class="relative w-full sm:max-w-[350px] md:max-w-[550px] lg:max-w-none h-[250px] sm:h-[350px] md:h-[420px] lg:h-[485px] flex items-center justify-center mx-auto">
               <img
                 loading="lazy"
-                width="647"
-                height="486"
-                class="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                src="/imgban11.webp"
+                class="max-h-full max-w-full object-contain rounded-xl shadow-xl ring-1 ring-black ring-opacity-5"
+                src="/inchoo (3).jpg"
+                alt=" PARFUMS CHEVEUX ET CORPS"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8 ">
+          <div class="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 lg:col-start-2">
+            <div>
+              <div class="mt-6">
+                <h2 class="text-3xl font-bold tracking-tight text-black">
+                  Douceur et pureté : soins capillaires sans nocifs{" "}
+                </h2>
+                <p class="mt-4 text-lg text-black">
+                  Nos produits de soins capillaires purs et naturels : toute une
+                  gamme sans silicone, sans sulfate et sans paraben. Le
+                  shampoing, le conditionneur, le sérum et le masque Sidr
+                  nourrissent et revitalisent en profondeur, apportant douceur,
+                  brillance et légèreté, tout en respectant la santé de vos
+                  cheveux. Chaque produit est formulé pour préserver l’équilibre
+                  naturel de vos cheveux, pour une chevelure propre, saine et
+                  éclatante de beauté.
+                </p>
+                <div class="mt-6">
+                  <Link
+                    class="inline-flex rounded-lg bg-[#ad9b60] px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-[#ad9b60] hover:bg-[#ad9b60] hover:ring-[#ad9b60]"
+                    to="/products"
+                  >
+                    Voir plus
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-12 sm:mt-16 lg:mt-0">
+            <div class="relative w-full sm:max-w-[350px] md:max-w-[550px] lg:max-w-none h-[250px] sm:h-[350px] md:h-[420px] lg:h-[485px] flex items-center justify-center mx-auto">
+              <img
+                loading="lazy"
+                class="max-h-full max-w-full object-contain rounded-xl shadow-xl ring-1 ring-black ring-opacity-5"
+                src="/inchoo (4).jpg"
+                alt="SOINS CAPILLAIRES"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8 ">
+          <div class="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 ">
+            <div>
+              <div class="mt-6">
+                <h2 class="text-3xl font-bold tracking-tight text-black">
+                  Bakhour Fatma, L’Âme en Fumée
+                </h2>
+                <p class="mt-4 text-lg text-black">
+                  Au cœur de l’univers fascinant de l’encens Fatma, nous rendons
+                  hommage à une femme hors du commun : Fatma notre source
+                  d’inspiration de nos collections. Chaque création perpétue son
+                  souvenir avec émotion, bien plus qu’un simple encens. C’est
+                  ainsi que commence l’histoire de Maamoul Darna, de Mabthouth
+                  Al Saif , et de Mestaka parfumée.
+                </p>
+                <div class="mt-6">
+                  <Link
+                    class="inline-flex rounded-lg bg-[#ad9b60] px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-[#ad9b60] hover:bg-[#ad9b60] hover:ring-[#ad9b60]"
+                    to="/products"
+                  >
+                    Voir plus
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-12 sm:mt-16 lg:mt-0">
+            <div class="relative w-full sm:max-w-[350px] md:max-w-[550px] lg:max-w-none h-[250px] sm:h-[350px] md:h-[420px] lg:h-[485px] flex items-center justify-center mx-auto">
+              {" "}
+              <img
+                loading="lazy"
+                class="max-h-full max-w-full object-contain rounded-xl shadow-xl ring-1 ring-black ring-opacity-5"
+                src="/inchoo (5).jpg"
               />
             </div>
           </div>

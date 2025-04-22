@@ -1,6 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaSprayCan, FaFeatherAlt, FaSnowflake } from "react-icons/fa";
+import {
+  FaSprayCan,
+  FaFeatherAlt,
+  FaSnowflake,
+  FaDiceD20,
+} from "react-icons/fa";
+import { IoDiamondSharp } from "react-icons/io5";
+
 function BannerPromoOne() {
   return (
     <section class="bg-white px-4 py-8 antialiased dark:bg-gray-900 md:py-16">
@@ -13,11 +20,11 @@ function BannerPromoOne() {
             class="flex w-full items-center rounded-xl border border-black border-opacity-10 px-4 py-6 text-black duration-200 hover:border-opacity-0 hover:no-underline hover:shadow-lg dark:text-white dark:hover:bg-white dark:hover:bg-opacity-10 sm:flex-col sm:hover:shadow-2xl"
             target="_blank"
           >
-            <FaFeatherAlt className="mr-4 w-12 sm:mr-0 sm:h-32 sm:w-32 text-[#ad9b60]" />
+            <IoDiamondSharp className="mr-4 w-12 sm:mr-0 sm:h-32 sm:w-32 text-[#ad9b60]" />
 
             <div>
               <div class="font-semibold text-black dark:text-white sm:mt-4 sm:mb-2">
-                Organique{" "}
+                Luxe{" "}
               </div>
             </div>
           </a>
@@ -41,7 +48,7 @@ function BannerPromoOne() {
 
             <div>
               <div class="font-semibold text-black dark:text-white sm:mt-4 sm:mb-2">
-                Fragrance Raffinée{" "}
+                Durable{" "}
               </div>
             </div>
           </a>
@@ -59,8 +66,12 @@ function BannerPromoOne() {
         </div>
         <div class="me-auto place-self-center lg:col-span-7">
           <p class="mb-6 text-gray-500 dark:text-gray-400">
-            INCHOO est une marque 100% tunisienne dédiée à l'excellence des
-            produits d'hygiène et de bien-être.
+            Inchoo est une marque tunisienne des produits cosmétiques, encens et
+            des fragrances de luxes qui réinvente l'art du parfum, en offrant
+            des créations uniques pour la maison, la peau et les cheveux. Chaque
+            produit est une invitation à l'élégance, fusionnant des senteurs
+            envoûtantes avec un raffinement absolu. Içi nous façonnons des
+            souvenirs autant que des parfums.
           </p>
           <Link
             to="/aboutUs"
