@@ -152,15 +152,13 @@ const AllProducts = () => {
                     <div className="pt-6">
                       <div className="space-y-6">
                         {[
-                          "Produits peau",
-                          "Produits visage",
-                          "Produits intimes",
-                          "Produits capillaires",
-                          "Produits de rasage",
-                          "Produits d'hygiène et de bien être",
-                          "Bakhour",
-                          "Packs",
-                          "Coffrets",
+                          "SOINS DE PEAU",
+                          "SOINS DE VISAGE",
+                          "SOINS CAPILLAIRES",
+                          "PARFUMS MAISON",
+                          "PARFUMS CHEVEUX ET CORPS",
+                          "PACKS",
+                          "ACCESOIRES",
                         ].map((category, index) => (
                           <div className="flex items-center" key={index}>
                             <input
@@ -243,15 +241,13 @@ const AllProducts = () => {
                     <div className="pt-6">
                       <div className="space-y-4">
                         {[
-                          "Produits peau",
-                          "Produits visage",
-                          "Produits intimes",
-                          "Produits capillaires",
-                          "Produits de rasage",
-                          "Produits d'hygiène et de bien être",
-                          "Bakhour",
-                          "Packs",
-                          "Coffrets",
+                          "SOINS DE PEAU",
+                          "SOINS DE VISAGE",
+                          "SOINS CAPILLAIRES",
+                          "PARFUMS MAISON",
+                          "PARFUMS CHEVEUX ET CORPS",
+                          "PACKS",
+                          "ACCESOIRES",
                         ].map((category, index) => (
                           <div className="flex items-center" key={index}>
                             <input

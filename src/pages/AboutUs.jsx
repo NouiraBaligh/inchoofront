@@ -3,22 +3,16 @@ import React from "react";
 function AboutUs() {
   return (
     <div>
-      <div class="relative w-full h-[320px]" id="home">
+      <div class="relative w-full h-[550px]" id="home">
         <div class="absolute inset-0 opacity-70">
           <img
-            src="/imgban12.webp"
+            src="/lastone.png"
             alt="Background Image"
             class="object-cover object-center w-full h-full"
           />
         </div>
-        <div class="absolute inset-9 flex flex-col md:flex-row items-center justify-between">
+        {/* <div class="absolute inset-9 flex flex-col md:flex-row items-center justify-between">
           <div class="md:w-1/2 mb-4 md:mb-0">
-            <h1 class="text-grey-700 font-medium text-4xl md:text-5xl leading-tight mb-2">
-              Inchoo
-            </h1>
-            <p class="font-regular text-xl mb-8 mt-4">
-              Offrez à votre corps ce qu'il mérite.
-            </p>
             <a
               href="#contactUs"
               class="px-6 py-3 bg-[#c8a876] text-white font-medium rounded-full hover:bg-[#c09858]  transition duration-200"
@@ -26,55 +20,73 @@ function AboutUs() {
               Contactez Nous
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <section class="py-10" id="services">
         <div class="container mx-auto px-4">
           <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
-            Nos services
+            NOS PRODUITS
           </h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
               <img
                 src="/imgban12.webp"
-                alt="wheat flour grinding"
+                alt="SOINS DE VISAGE"
                 class="w-full h-64 object-cover"
               />
               <div class="p-6 text-center">
-                <h3 class="text-xl font-medium text-gray-800 mb-2">Test1</h3>
-                <p class="text-gray-700 text-base">test1 </p>
-              </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-              <img
-                src="/imgban9.jpg"
-                alt="Coffee"
-                class="w-full h-64 object-cover"
-              />
-              <div class="p-6 text-center">
-                <h3 class="text-xl font-medium text-gray-800 mb-2">test2</h3>
-                <p class="text-gray-700 text-base">Test2</p>
+                <h3 class="text-xl font-medium text-gray-800 mb-2">
+                  SOINS DE VISAGE{" "}
+                </h3>
               </div>
             </div>
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
               <img
                 src="/imgban3.jpg"
-                alt="Coffee"
+                alt="SOINS DE PEAU"
                 class="w-full h-64 object-cover"
               />
               <div class="p-6 text-center">
-                <h3 class="text-xl font-medium text-gray-800 mb-2">Test3</h3>
-                <p class="text-gray-700 text-base">
-                  Test3
-                  {/* <details>
-                    <summary>Read More</summary>
-                    <p>
-                      Our jowar flour is also a good source of protein and
-                      fiber, making it a healthy choice for your family.
-                    </p>
-                  </details> */}
-                </p>
+                <h3 class="text-xl font-medium text-gray-800 mb-2">
+                  SOINS DE PEAU
+                </h3>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <img
+                src="/soincap.jpg"
+                alt="SOINS CAPILLAIRES"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6 text-center">
+                <h3 class="text-xl font-medium text-gray-800 mb-2">
+                  SOINS CAPILLAIRES
+                </h3>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <img
+                src="/parfummaison.jpg"
+                alt="PARFUMS MAISON"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6 text-center">
+                <h3 class="text-xl font-medium text-gray-800 mb-2">
+                  PARFUMS MAISON
+                </h3>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <img
+                src="/parfmcorps.jpg"
+                alt=" PARFUMS CHEVEUX ET CORPS"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6 text-center">
+                <h3 class="text-xl font-medium text-gray-800 mb-2">
+                  PARFUMS CHEVEUX ET CORPS
+                </h3>
               </div>
             </div>
           </div>
@@ -88,11 +100,36 @@ function AboutUs() {
               <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
                 À propos de nous
               </h2>
-              <p class="mt-4 text-gray-600 text-lg">Inchoo</p>
+              <p class="mt-4 text-gray-600 text-lg">
+                Depuis 2024, Inchoo est une entreprise innovante et passionnée
+                par l’art de la beauté et du parfum. Spécialisée dans la
+                fabrication de produits cosmétiques, d'encens et de parfums de
+                luxe, notre mission est d'offrir des expériences sensorielles
+                inoubliables à travers des créations raffinées et de qualité
+                exceptionnelle.
+              </p>
+              <p class="mt-4 text-gray-600 text-lg">
+                Nos produits sont conçus pour sublimer tous les aspects de votre
+                quotidien. De la maison aux soins corporels, en passant par les
+                cheveux, les mains et les pieds, chaque article de notre
+                collection est soigneusement élaboré pour apporter confort,
+                bien-être et une touche de luxe à votre routine.
+              </p>
+              <p class="mt-4 text-gray-600 text-lg">
+                Chez Inchoo, nous mettons un point d'honneur à allier
+                innovation, qualité et sensorialité, afin de créer des produits
+                qui ne se contentent pas de séduire vos sens, mais qui vous
+                permettent de vivre un moment de pure indulgence.
+              </p>
+              <p class="mt-4 text-gray-600 text-lg">
+                Chez inchoo nous ne créons pas seulement des parfums, nous
+                créons des souvenirs qui s’ancrent dans votre mémoire des
+                moments qui deviennent uniques.
+              </p>
             </div>
             <div class="mt-12 md:mt-0">
               <img
-                src="/imgban4.jpg"
+                src="/aboutUs.png"
                 alt="About Us Image"
                 class="object-cover rounded-lg shadow-md"
               />
@@ -253,7 +290,7 @@ function AboutUs() {
                     </p>
 
                     <p class="mt-1 font-bold text-gray-600">
-                      <a>Email: contact@inchoo.tn</a>
+                      <a>Email: inchoo.perfumes@gmail.com</a>
                     </p>
                   </div>
                   <div class="border-t border-gray-200 px-6 py-4">

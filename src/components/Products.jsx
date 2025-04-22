@@ -39,7 +39,7 @@ const Products = () => {
     } else if (filter === "packs") {
       // Filter products by "packs" category
       setFilteredData(
-        products.filter((product) => product.category === "Packs")
+        products.filter((product) => product.category === "PACKS")
       );
     } else {
       // Show all products

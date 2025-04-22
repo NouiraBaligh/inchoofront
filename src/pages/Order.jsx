@@ -49,7 +49,7 @@ const Order = () => {
     }
   };
 
-  const shippingCost = calculateSubtotal() >= 99 ? 0 : 7.0; // Set shipping cost to 0 if subtotal is > 100  const discountedTotal = calculateSubtotal() * (1 - discountPercentage / 100);
+  const shippingCost = calculateSubtotal() >= 99 ? 0 : 8.0; // Set shipping cost to 0 if subtotal is > 100  const discountedTotal = calculateSubtotal() * (1 - discountPercentage / 100);
   const discountedTotal = calculateSubtotal() * (1 - discountPercentage / 100);
   const totalCost = discountedTotal + shippingCost;
 

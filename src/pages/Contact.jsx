@@ -17,7 +17,7 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${baseURL}/products/users/createMsg`, {
+      const response = await fetch(`${baseURL}/users/createMsg`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

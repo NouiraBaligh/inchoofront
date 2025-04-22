@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 
 const slides = [
   {
-    image: "/bann2.jpg",
-    smallImage: "/baner1small.jpg",
-    title: "Chaque fragrance raconte une histoire.",
+    image: "/62d324e332d57d92eb724d1a2e4f0800.jpg",
+    smallImage: "/ddc5e8e9-9ef4-419d-88a4-c25c74a649ff.png",
+    title: "Inchoo, chaque fragrance raconte une histoire.",
     description:
       "Révélez votre éclat avec nos trésors de beauté soigneusement choisis.",
   },
   {
-    image: "/bann3.jpg",
-    smallImage: "/baner3small.jpg",
+    image: "/0c744977-8b99-4447-acd3-8ec5530d89dc.png",
+    smallImage: "/4ab00eb3-d4eb-4013-8c55-56e88ca620b9.png",
     title: "Une expérience sensorielle unique.",
     description: "Découvrez des parfums qui éveillent vos sens.",
   },
@@ -64,7 +64,7 @@ function Banner() {
               </p>
               <Link
                 to="/products"
-                className="inline-block rounded-full bg-[#ad9b60] px-8 py-4 text-center font-bold text-white transition hover:text-[#ad9b60] hover:border-black hover:bg-white"
+                className="inline-block rounded-full bg-[#ad9b60] px-8 py-4 text-center font-bold text-white transition"
               >
                 Profitez
               </Link>

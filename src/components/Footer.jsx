@@ -63,7 +63,7 @@ const Footer = () => {
                   <a class="hover:underline">(+216) 94 121 754</a>
                 </li>
                 <li>
-                  <a class="hover:underline">contact@inchoo.tn</a>
+                  <a class="hover:underline">inchoo.perfumes@gmail.com</a>
                 </li>
               </ul>
             </div>
